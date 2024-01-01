@@ -28,6 +28,13 @@
     <script src="js/lezhin.js?ver=2" async defer></script>
     <script src="js/animations.js"></script>
     <script>
+       function changeToHeart(element) {
+                element.classList.add('heart');
+            }
+
+            function changeBack(element) {
+                element.classList.remove('heart');
+            }
       function start() {
         lezhin.start();
       }
