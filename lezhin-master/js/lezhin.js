@@ -163,16 +163,19 @@ if(!window['lezhin']) {
         if(v.curStage === v.curRound/2) _O.Ctrl.nextRound();
         _O.Html.setItem();
         _O.Ctrl.prevCancelOnOff();
+	obj.classList.add('clicked');
       },
       overItem(obj) {
         const objs = document.querySelectorAll('#list_ideal li a[hover="true"]');
         objs.forEach((itm) => itm.setAttribute('hover', 'false'));
         if(obj.getAttribute('hover') === 'true') return;
         obj.setAttribute('hover', 'true');
+	      obj.classList.add('hovered');
       },
       outItem(obj) {
         if(obj.getAttribute('hover') === 'false') return;
         obj.setAttribute('hover', 'false');
+	      obj.classList.remove('hovered');
       },
       clickCancel() {
         _O.start();
