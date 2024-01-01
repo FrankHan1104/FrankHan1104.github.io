@@ -32,47 +32,47 @@ if(!window['lezhin']) {
         return [
           {
             name: '배수지',
-            imgSrc: 'images/01.jpg',
+            imgSrc: 'images/1.jpg',
             selected: false
           },
           {
             name: '신세경',
-            imgSrc: 'images/02.jpg',
+            imgSrc: 'images/2.jpg',
             selected: false
           },
           {
             name: '고윤정',
-            imgSrc: 'images/03.jpg',
+            imgSrc: 'images/3.jpg',
             selected: false
           },
           {
             name: '김태희',
-            imgSrc: 'images/04.jpg',
+            imgSrc: 'images/4.jpg',
             selected: false
           },
           {
             name: '한소희',
-            imgSrc: 'images/05.jpg',
+            imgSrc: 'images/5.jpg',
             selected: false
           },
           {
             name: '윤아',
-            imgSrc: 'images/06.jpg',
+            imgSrc: 'images/6.jpg',
             selected: false
           },
           {
             name: '박보영',
-            imgSrc: 'images/07.jpg',
+            imgSrc: 'images/7.jpg',
             selected: false
           },
           {
             name: '이지은',
-            imgSrc: 'images/08.jpg',
+            imgSrc: 'images/8.jpg',
             selected: false
           },
           {
             name: '박지현',
-            imgSrc: 'images/09.jpg',
+            imgSrc: 'images/9.jpg',
             selected: false
           },
           {
