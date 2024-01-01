@@ -21,7 +21,8 @@ address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
 /* content */
 .wrap {max-width:900px;margin:0 auto}
 header {margin-bottom:30px}
-h1 {font-family: 'Noto Sans KR', sans-serif; /* Noto Sans KR 폰트 적용 */
+h1, #roundTitle {
+    font-family: 'Noto Sans KR', sans-serif; /* Noto Sans KR 폰트 적용 */
     text-align: center; /* 가운데 정렬 */
     font-weight: 700; /* 굵은 글씨체 */
     color: #333; /* 색상 설정 (필요에 따라 변경 가능) */
