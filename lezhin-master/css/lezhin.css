@@ -25,7 +25,8 @@ h1 {font-family: 'Noto Sans KR', sans-serif; /* Noto Sans KR 폰트 적용 */
     text-align: center; /* 가운데 정렬 */
     font-weight: 700; /* 굵은 글씨체 */
     color: #333; /* 색상 설정 (필요에 따라 변경 가능) */
-    margin-bottom: 20px; /* 아래쪽 여백 */}
+    margin-bottom: 20px; /* 아래쪽 여백 */
+   }
 .content {margin-bottom:30px}
 .content.default,
 .content.in_game {
