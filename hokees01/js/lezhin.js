@@ -15,13 +15,7 @@ if(!window['lezhin']) {
       v.lists = _O.Ctrl.getLists();
       _O.Ctrl.prevCancelOnOff();
     };
- function changeToHeart(element) {
-                element.classList.add('heart');
-            }
 
-            function changeBack(element) {
-                element.classList.remove('heart');
-            }
     _O.start = () => {
       _O.init();
       _O.Ctrl.gameNewStart.bind(_O.Ctrl)();
