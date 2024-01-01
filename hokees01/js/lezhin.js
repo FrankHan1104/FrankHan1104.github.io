@@ -31,17 +31,17 @@ if(!window['lezhin']) {
       getLists() {
         return [
           {
-            name: '전지현',
+            name: '배수지',
             imgSrc: 'images/01.jpg',
             selected: false
           },
           {
-            name: '이영애',
+            name: '신세경',
             imgSrc: 'images/02.jpg',
             selected: false
           },
           {
-            name: '수지',
+            name: '고윤정',
             imgSrc: 'images/03.jpg',
             selected: false
           },
@@ -51,12 +51,12 @@ if(!window['lezhin']) {
             selected: false
           },
           {
-            name: '신민아',
+            name: '한소희',
             imgSrc: 'images/05.jpg',
             selected: false
           },
           {
-            name: '송혜교',
+            name: '윤아',
             imgSrc: 'images/06.jpg',
             selected: false
           },
@@ -66,47 +66,47 @@ if(!window['lezhin']) {
             selected: false
           },
           {
-            name: '아이유',
+            name: '이지은',
             imgSrc: 'images/08.jpg',
             selected: false
           },
           {
-            name: '김사랑',
+            name: '박지현',
             imgSrc: 'images/09.jpg',
             selected: false
           },
           {
-            name: '아이린',
+            name: '조보아',
             imgSrc: 'images/10.jpg',
             selected: false
           },
           {
-            name: '이효리',
+            name: '권나라',
             imgSrc: 'images/11.jpg',
             selected: false
           },
           {
-            name: '한효주',
+            name: '박은빈',
             imgSrc: 'images/12.jpg',
             selected: false
           },
           {
-            name: '한지민',
+            name: '이성경',
             imgSrc: 'images/13.jpg',
             selected: false
           },
           {
-            name: '이나영',
+            name: '김유정',
             imgSrc: 'images/14.jpg',
             selected: false
           },
           {
-            name: '이연희',
+            name: '한효주',
             imgSrc: 'images/15.jpg',
             selected: false
           },
           {
-            name: '고준희',
+            name: '김지원',
             imgSrc: 'images/16.jpg',
             selected: false
           }
