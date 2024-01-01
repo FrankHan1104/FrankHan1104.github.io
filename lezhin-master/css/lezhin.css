@@ -123,11 +123,19 @@ body, th, td, input, select, textarea, button {
 }
 
 button {
-    transition: background-color 0.3s ease;
+    font-size: 28px; /* 기존보다 큰 폰트 사이즈 */
+    padding: 15px 30px; /* 더 큰 패딩으로 버튼의 크기를 늘림 */
+    border-radius: 10px; /* 둥근 모서리를 더 부각시킴 */
+    background-color: #6c5ce7; /* 현대적인 보라색 톤 */
+    color: white; /* 버튼 텍스트 색상 */
+    border: none; /* 테두리 제거 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    transition: background-color 0.3s, transform 0.3s; /* 부드러운 색상 및 크기 변환 효과 */
 }
 
 button:hover {
-    background-color: #4CAF50; /* 버튼 호버 색상 변경 */
+    background-color: #a29bfe; /* 호버 시 밝은 색상으로 변경 */
+    transform: scale(1.1); /* 호버 시 약간 확대 */
 }
 
 /* 이미지 및 버튼 애니메이션 */
@@ -157,6 +165,10 @@ button:hover {
 
 /* media */
 @media (max-width:525px){
+	button {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
   .list_ideal {display:block}
   .list_ideal li {width:90%;margin:15px auto 0}
 }
