@@ -21,7 +21,11 @@ address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
 /* content */
 .wrap {max-width:900px;margin:0 auto}
 header {margin-bottom:30px}
-h1 {font-weight:bold;font-size:2rem;line-height:1.4}
+h1 {font-family: 'Noto Sans KR', sans-serif; /* Noto Sans KR 폰트 적용 */
+    text-align: center; /* 가운데 정렬 */
+    font-weight: 700; /* 굵은 글씨체 */
+    color: #333; /* 색상 설정 (필요에 따라 변경 가능) */
+    margin-bottom: 20px; /* 아래쪽 여백 */}
 .content {margin-bottom:30px}
 .content.default,
 .content.in_game {
@@ -160,7 +164,13 @@ button:hover {
 
 /* 이미지 및 자바스크립트 최적화를 위한 추가 스타일 */
 /* 이미지 사이즈 최적화, 불필요한 JS/CSS 제거 등 */
+h1 {
+    font-size: 2rem; /* 큰 제목 크기 */
+}
 
+#roundTitle {
+    font-size: 1.5rem; /* 작은 제목 크기 */
+}
 
 
 /* media */
