@@ -81,7 +81,7 @@ function updateWinner(winnerName) {
   const db = firebase.firestore();
   const winnerRef = db.collection("hokees01").doc("p1");
 
-  alert("updateWinner 함수가 호출되었습니다. 우승자: " + winnerName); // 함수 호출 확인
+  document.getElementById('statusText').innerText = "작동중...";
 
   // 우승자의 점수를 업데이트합니다.
   return db.runTransaction((transaction) => {
@@ -93,7 +93,7 @@ function updateWinner(winnerName) {
       // 새로운 스코어를 계산합니다.
       let newScore = doc.data()[winnerName] ? doc.data()[winnerName] + 1 : 1;
 
-      alert("현재 점수: " + (newScore - 1) + ". 업데이트될 점수: " + newScore); // 현재 점수와 업데이트될 점수 확인
+      
 
       // 문서 업데이트
       transaction.update(winnerRef, { [winnerName]: newScore });
@@ -101,11 +101,10 @@ function updateWinner(winnerName) {
       return newScore; // 업데이트된 점수 반환
     });
   }).then((newScore) => {
-    console.log("Transaction successfully committed!");
-    alert("우승자: " + winnerName + "\n업데이트된 점수: " + newScore); // 최종 결과 출력
+    document.getElementById('statusText').innerText = "작업완";
   }).catch((error) => {
     console.log("Transaction failed: ", error);
-    alert("오류 발생: " + error); // 오류 발생시 경고창 출력
+    document.getElementById('statusText').innerText = "오류 발생";
   });
 }
 
