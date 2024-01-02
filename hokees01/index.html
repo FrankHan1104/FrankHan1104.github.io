@@ -71,6 +71,32 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+    
+function updateWinner(winnerName) {
+  const db = firebase.firestore();
+  const winnerRef = db.collection("hokees01").doc("p1");
+
+  // 우승자의 점수를 업데이트합니다.
+  return db.runTransaction((transaction) => {
+    return transaction.get(winnerRef).then((doc) => {
+      if (!doc.exists) {
+        throw "Document does not exist!";
+      }
+
+      // 새로운 스코어를 계산합니다.
+      let newScore = doc.data()[winnerName] ? doc.data()[winnerName] + 1 : 1;
+
+      // 문서 업데이트
+      transaction.update(winnerRef, { [winnerName]: newScore });
+    });
+  }).then(() => {
+    console.log("Transaction successfully committed!");
+  }).catch((error) => {
+    console.log("Transaction failed: ", error);
+  });
+}
+
+    
 </script>
   </body>
 </html>
