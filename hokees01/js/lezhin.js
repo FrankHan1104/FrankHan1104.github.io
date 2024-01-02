@@ -300,3 +300,13 @@ _O.start = () => {
 	
 
 window.start = window.lezhin.start;
+// 기존 lezhin 객체 및 함수 정의...
+
+// 페이지 로드 완료 후 이벤트 리스너 추가
+document.addEventListener('DOMContentLoaded', (event) => {
+    const startButton = document.getElementById('btnGameStart');
+    if(startButton) {
+        startButton.addEventListener('click', lezhin.start);
+    }
+});
+
