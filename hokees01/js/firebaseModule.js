@@ -38,3 +38,59 @@ export function updateWinner(winnerName) {
         document.getElementById('statusText').innerText = "에러2";
     });
 }
+
+async function showResults() {
+    try {
+        // Firestore에서 모든 문서 가져오기
+        const q = query(collection(db, "hokees01"));
+        const querySnapshot = await getDocs(q);
+
+        let resultsArray = [];
+        querySnapshot.forEach((doc) => {
+            // 각 문서의 모든 필드(사람 이름 및 점수)를 배열에 추가
+            Object.entries(doc.data()).forEach(([name, score]) => {
+                resultsArray.push({ name, score });
+            });
+        });
+
+        // 점수에 따라 결과 배열 정렬
+        resultsArray.sort((a, b) => b.score - a.score);
+
+        // 결과 표시
+        displayResults(resultsArray);
+    } catch (error) {
+        console.error("Error fetching documents: ", error);
+    }
+}
+function displayResults(resultsArray) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = ''; // 기존 내용 초기화
+    const table = document.createElement('table');
+
+    // 테이블 헤더 생성
+    const header = table.insertRow();
+    const nameHeader = header.insertCell();
+    nameHeader.innerHTML = '이름';
+    const scoreHeader = header.insertCell();
+    scoreHeader.innerHTML = '점수';
+    const imgHeader = header.insertCell();
+    imgHeader.innerHTML = '사진';
+
+    // 각 결과에 대한 행 추가
+    resultsArray.forEach(result => {
+        const row = table.insertRow();
+        const nameCell = row.insertCell();
+        nameCell.innerHTML = result.name;
+        const scoreCell = row.insertCell();
+        scoreCell.innerHTML = result.score;
+        const imgCell = row.insertCell();
+        const img = document.createElement('img');
+        img.src = result.imgSrc;
+        imgCell.appendChild(img);
+    });
+
+    resultsDiv.appendChild(table);
+}
+
+// 결과 확인 버튼 이벤트 리스너
+document.getElementById('resultsButton').addEventListener('click', showResults);
