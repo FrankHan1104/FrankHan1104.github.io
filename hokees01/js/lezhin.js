@@ -17,11 +17,12 @@ if(!window['lezhin']) {
       v.lists = _O.Ctrl.getLists();
       _O.Ctrl.prevCancelOnOff();
     };
-
-    _O.start = () => {
+_O.start = () => {
       _O.init();
       _O.Ctrl.gameNewStart.bind(_O.Ctrl)();
     };
+
+    
     _O.Vars = {
       lists:null,
       curRound: 0,
