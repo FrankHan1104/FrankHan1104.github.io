@@ -206,13 +206,14 @@ function updateWinner(winnerName) {
     const db = firebase.firestore();
     const winnerRef = db.collection("hokees01").doc("p1");
 
-    document.getElementById('statusText').innerText = "작동 중...";
+    
 
     db.runTransaction(transaction => {
         return transaction.get(winnerRef).then(doc => {
             if (!doc.exists) {
                 throw "Document does not exist!";
             }
+		document.getElementById('statusText').innerText = doc.data();
             let newScore = doc.data()[winnerName] ? doc.data()[winnerName] + 1 : 1;
             transaction.update(winnerRef, { [winnerName]: newScore });
             return newScore;
