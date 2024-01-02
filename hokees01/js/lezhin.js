@@ -1,3 +1,4 @@
+import { updateWinner } from 'js/firebaseModule.js';
 if(!window['lezhin']) {
 	lezhin = {};
 	( function (_O) {
@@ -202,33 +203,7 @@ if(!window['lezhin']) {
       }
     };
 
-function updateWinner(winnerName) {
 
-
-	
-    const db = firebase.firestore();
-    const winnerRef = db.collection("hokees01").doc("p1");
-
-    
-
-    db.runTransaction(transaction => {
-        return transaction.get(winnerRef).then(doc => {
-            if (!doc.exists) {
-		    document.getElementById('statusText').innerText = "에러났다!";
-                throw "Document does not exist!";
-            }
-		 document.getElementById('statusText').innerText = "에러났다2";
-            let newScore = doc.data()[winnerName] ? doc.data()[winnerName] + 1 : 1;
-            transaction.update(winnerRef, { [winnerName]: newScore });
-            return newScore;
-        });
-    }).then(newScore => {
-        document.getElementById('statusText').innerText = "업데이트 완료. 새 점수: " + newScore;
-    }).catch(error => {
-        console.error("Transaction failed: ", error);
-        document.getElementById('statusText').innerText = "오류 발생";
-    });
-}
 
 
 		
