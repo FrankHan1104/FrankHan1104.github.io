@@ -72,22 +72,24 @@ function displayResults(resultsArray) {
     const header = table.insertRow();
     const nameHeader = header.insertCell();
     nameHeader.innerHTML = '이름';
-    const scoreHeader = header.insertCell();
-    scoreHeader.innerHTML = '점수';
     const imgHeader = header.insertCell();
     imgHeader.innerHTML = '사진';
+    const scoreHeader = header.insertCell();
+    scoreHeader.innerHTML = '점수';
 
     // 각 결과에 대한 행 추가
     resultsArray.forEach(result => {
         const row = table.insertRow();
         const nameCell = row.insertCell();
         nameCell.innerHTML = result.name;
-        const scoreCell = row.insertCell();
-        scoreCell.innerHTML = result.score;
+
         const imgCell = row.insertCell();
         const img = document.createElement('img');
         img.src = result.imgSrc;
         imgCell.appendChild(img);
+
+        const scoreCell = row.insertCell();
+        scoreCell.innerHTML = result.score;
     });
 
     resultsDiv.appendChild(table);
