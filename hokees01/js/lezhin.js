@@ -235,7 +235,7 @@ if(!window['lezhin']) {
       setRoundTitle() {
         if(_O.Vars.curRound > 1) document.getElementById('roundTitle').innerText = `${_O.Vars.curRound}강 선택`;
         else {
-		//document.getElementById('roundTitle').innerText = `축하합니다. 최종 이상형이 선정되었습니다.`;
+		document.getElementById('roundTitle').innerText = `축하합니다. 최종 이상형이 선정되었습니다.`;
 	     }
       },
       setItem() {
@@ -245,7 +245,7 @@ if(!window['lezhin']) {
         tObj.innerHTML = s;
         if(_O.Vars.curRound === 1) { 
 					let winnerName = _O.Vars.gameHistory["1"][0].name; // 여기서는 게임 히스토리의 첫 번째 요소가 우승자라고 가정
-		document.getElementById('roundTitle').innerText = winnerName;
+		
        _O.updateWinner(winnerName); // 우승자 업데이트 함수 호출
 		_O.Html.setHistory();
 				    
