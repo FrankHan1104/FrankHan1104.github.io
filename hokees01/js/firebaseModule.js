@@ -68,7 +68,7 @@ function displayResults(resultsArray) {
     resultsDiv.innerHTML = ''; // 기존 내용 초기화
     resultsDiv.style.textAlign = 'center'; // 텍스트 중앙 정렬
     const table = document.createElement('table');
-    table.style.width = '80%'; // 예를 들어, 테이블의 너비를 80%로 설정
+    table.style.width = '100%'; // 예를 들어, 테이블의 너비를 80%로 설정
      table.style.margin = 'auto'; // 테이블을 중앙에 배치
 
     // 테이블 헤더 생성
