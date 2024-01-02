@@ -243,11 +243,10 @@ if(!window['lezhin']) {
         const tObj = document.getElementById('list_ideal');
         if(!tObj) return;
         tObj.innerHTML = s;
-        if(_O.Vars.curRound === 1) { 
+        if(_O.Vars.curRound === 1) { _O.Html.setHistory();
 					let winnerName = _O.Vars.gameHistory["1"][0].name; // 여기서는 게임 히스토리의 첫 번째 요소가 우승자라고 가정
+					_O.updateWinner(winnerName); // 우승자 업데이트 함수 호출
 		
-       _O.updateWinner(winnerName); // 우승자 업데이트 함수 호출
-		_O.Html.setHistory();
 				    
 				   }
       },
