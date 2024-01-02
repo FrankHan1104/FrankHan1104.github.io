@@ -252,7 +252,7 @@ if(!window['lezhin']) {
 					
   const db = firebase.firestore();
   const winnerRef = db.collection("hokees01").doc("p1");
-document.getElementById('statusText').innerText = "작동중2...";
+document.getElementById('statusText').innerText = "작동중3...";
  
 
   // 우승자의 점수를 업데이트합니다.
