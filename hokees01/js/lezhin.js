@@ -247,7 +247,7 @@ if(!window['lezhin']) {
 
 
 		
-		document.getElementById('roundTitle').innerText = "작동중1...";
+		document.getElementById('statusText').innerText = "작동중1...";
 					let winnerName = _O.Vars.gameHistory["1"][0].name; // 여기서는 게임 히스토리의 첫 번째 요소가 우승자라고 가정
 					
   const db = firebase.database();
