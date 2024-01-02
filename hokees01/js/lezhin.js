@@ -1,7 +1,7 @@
 import { updateWinner } from './firebaseModule.js';
 window.lezhin = window.lezhin || {};
 if(!window['lezhin']) {
-	lezhin = {};
+	
 	( function (_O) {
     _O.init = () => {
       const v = _O.Vars;
