@@ -162,7 +162,7 @@ if(!window['lezhin']) {
         v.gameHistory[v.curRound.toString()][idx].selected = true;
         if(v.curStage < v.curRound/2) v.curStage++;
         if(v.curStage === v.curRound/2) _O.Ctrl.nextRound();
-	alert("오류 발생: " + error); // 오류 발생시 경고창 출력      
+	     
         _O.Html.setItem();
         _O.Ctrl.prevCancelOnOff();
 	obj.classList.add('clicked');
