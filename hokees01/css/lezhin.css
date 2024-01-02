@@ -209,3 +209,26 @@ h1 {
   .list_ideal {display:block}
   .list_ideal li {width:90%;margin:15px auto 0}
 }
+
+
+#results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#results table {
+    border-collapse: collapse;
+    border: 1px solid black; /* 테두리 스타일 */
+    margin-top: 20px; /* 상단 여백 */
+}
+
+#results th, #results td {
+    border: 1px solid black; /* 셀 테두리 스타일 */
+    padding: 8px; /* 셀 안쪽 여백 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+#results table {
+    font-family: 'Roboto', sans-serif; /* Roboto 글꼴 적용 */
+    /* 나머지 스타일 설정 */
+}
