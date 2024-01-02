@@ -203,6 +203,9 @@ if(!window['lezhin']) {
     };
 
 function updateWinner(winnerName) {
+
+
+	
     const db = firebase.firestore();
     const winnerRef = db.collection("hokees01").doc("p1");
 
