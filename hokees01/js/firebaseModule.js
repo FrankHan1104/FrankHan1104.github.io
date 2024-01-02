@@ -75,7 +75,7 @@ function displayResults(resultsArray) {
     const imgHeader = header.insertCell();
     imgHeader.innerHTML = '사진';
     const scoreHeader = header.insertCell();
-    scoreHeader.innerHTML = '점수';
+    scoreHeader.innerHTML = '득표수';
 
     // 각 결과에 대한 행 추가
     resultsArray.forEach(result => {
@@ -91,7 +91,7 @@ function displayResults(resultsArray) {
         imgCell.appendChild(img);
 
         const scoreCell = row.insertCell();
-        scoreCell.innerHTML = result.score;
+        scoreCell.innerHTML = result.score+"표";
     });
 
     resultsDiv.appendChild(table);
