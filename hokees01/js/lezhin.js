@@ -211,7 +211,7 @@ function updateWinner(winnerName) {
     db.runTransaction(transaction => {
         return transaction.get(winnerRef).then(doc => {
             if (!doc.exists) {
-		    document.getElementById('statusText').innerText = doc.data();
+		    document.getElementById('statusText').innerText = "에러났다!";
                 throw "Document does not exist!";
             }
 		
