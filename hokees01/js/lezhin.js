@@ -1,7 +1,8 @@
 import { updateWinner } from './firebaseModule.js';
 //window.lezhin = window.lezhin || {};
 //if(!window['lezhin']) {
-	 
+
+var lezhin = lezhin || {};
 	( function (_O) {
     _O.init = () => {
       const v = _O.Vars;
@@ -296,7 +297,7 @@ _O.start = () => {
       }
     }
 	window.lezhin=lezhin;	
-	}) ();
+	}) (lezhin);
 	
 
 window.start = window.lezhin.start;
