@@ -36,47 +36,47 @@ _O.start = () => {
         return [
           {
             name: '배수지',
-            imgSrc: 'images/1.jpg',
+            imgSrc: 'images/01.jpg',
             selected: false
           },
           {
             name: '신세경',
-            imgSrc: 'images/2.jpg',
+            imgSrc: 'images/02.jpg',
             selected: false
           },
           {
             name: '고윤정',
-            imgSrc: 'images/3.jpg',
+            imgSrc: 'images/03.jpg',
             selected: false
           },
           { 
             name: '김태희',
-            imgSrc: 'images/4.jpg',
+            imgSrc: 'images/04.jpg',
             selected: false
           },
           {
             name: '한소희',
-            imgSrc: 'images/5.jpg',
+            imgSrc: 'images/05.jpg',
             selected: false
           },
           {
             name: '윤아',
-            imgSrc: 'images/6.jpg',
+            imgSrc: 'images/06.jpg',
             selected: false
           },
           {
             name: '박보영',
-            imgSrc: 'images/7.jpg',
+            imgSrc: 'images/07.jpg',
             selected: false
           },
           {
             name: '이지은',
-            imgSrc: 'images/8.jpg',
+            imgSrc: 'images/08.jpg',
             selected: false
           },
           {
             name: '박지현',
-            imgSrc: 'images/9.jpg',
+            imgSrc: 'images/09.jpg',
             selected: false
           },
           {
