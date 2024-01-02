@@ -86,6 +86,8 @@ function displayResults(resultsArray) {
         const imgCell = row.insertCell();
         const img = document.createElement('img');
         img.src = result.imgSrc;
+         img.style.width = '50%'; // 이미지의 너비를 50%로 설정
+        img.style.height = 'auto'; // 이미지의 높이를 자동으로 조정
         imgCell.appendChild(img);
 
         const scoreCell = row.insertCell();
