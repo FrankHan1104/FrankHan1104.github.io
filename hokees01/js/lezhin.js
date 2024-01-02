@@ -47,7 +47,7 @@ if(!window['lezhin']) {
             imgSrc: 'images/3.jpg',
             selected: false
           },
-          {
+          { 
             name: '김태희',
             imgSrc: 'images/4.jpg',
             selected: false
