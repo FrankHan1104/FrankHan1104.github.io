@@ -14,7 +14,7 @@
   <body onload="preLoadingImg()">
     <div class="wrap">
       <header>
-        <h1>이상형 월드컵(여성 배우편6)</h1>
+        <h1>이상형 월드컵(여성 배우편7)</h1>
         <span id="statusText"></span> <!-- 새로운 요소 추가 -->
         <p id="roundTitle">이상형 월드컵에 참여해 주세요.</p>
       </header>
@@ -26,42 +26,9 @@
         <button id="prev" onclick="lezhin.Event.clickPrev()">이전</button>
       </footer>
     </div>
-
-
-    <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-       import { getDatabase } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-         import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-    import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-   
-    
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyBCkAmK_Lm5GxaIPV9BYABGJe6oc9Rhtjg",
-    authDomain: "idealworldcup-3b2ca.firebaseapp.com",
-    projectId: "idealworldcup-3b2ca",
-    storageBucket: "idealworldcup-3b2ca.appspot.com",
-    messagingSenderId: "682226103350",
-    appId: "1:682226103350:web:b76baa33b0c82780681497",
-    measurementId: "G-GQ3M0QB222"
-  };
-
-     
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+  <script type="module" src="경로/firebaseModule.js"></script>
+<script type="module" src="js/lezhin.js?ver=2"></script>
       
-  const analytics = getAnalytics(app);
-    const db = getFirestore(app);  
-    const auth = getAuth(app);
-    const database = getDatabase(app);
-</script>
-        <script src="js/lezhin.js?ver=2" defer></script>
     <script>
        
       function start() {
