@@ -20,8 +20,8 @@
       </header>
       <div class="content default" id="content">
         <button id="btnGameStart">게임 참여</button>
-        <button id="resetButton" onclick="resetGame()">다시하기</button>
-        <button id="resultsButton" onclick="checkResults()">결과확인</button>
+        <button id="resetButton" onclick="resetGame()" style="display: none;">다시하기</button>
+        <button id="resultsButton" onclick="checkResults()" style="display: none;">결과확인</button>
       
       </div> 
       <footer class="footer soff" id="footer">
@@ -54,6 +54,10 @@
       // '결과확인' 버튼을 위한 함수
       function checkResults() {
         // 결과 확인 로직 구현
+      }
+      function showFinalButtons() {
+        document.getElementById("resetButton").style.display = "block";
+        document.getElementById("resultsButton").style.display = "block";
       }
     </script>
 
