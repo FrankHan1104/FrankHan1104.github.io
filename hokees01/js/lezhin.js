@@ -295,7 +295,8 @@ _O.start = () => {
         tObj.innerHTML = s;
       }
     }
-	}) (window.lezhin);
+	window.lezhin=lezhin;	
+	}) ();
 	
 
 window.start = window.lezhin.start;
