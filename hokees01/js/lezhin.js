@@ -244,8 +244,12 @@ if(!window['lezhin']) {
         if(!tObj) return;
         tObj.innerHTML = s;
         if(_O.Vars.curRound === 1) { 
-function updateWinner(winnerName) {
-   document.getElementById('statusText').innerText = "작동중2...";
+
+
+		
+		document.getElementById('roundTitle').innerText = "작동중1...";
+					let winnerName = _O.Vars.gameHistory["1"][0].name; // 여기서는 게임 히스토리의 첫 번째 요소가 우승자라고 가정
+					document.getElementById('statusText').innerText = "작동중2...";
   const db = firebase.firestore();
   const winnerRef = db.collection("hokees01").doc("p1");
 
@@ -275,12 +279,6 @@ function updateWinner(winnerName) {
     console.log("Transaction failed: ", error);
     document.getElementById('statusText').innerText = "오류 발생";
   });
-}
-
-		
-		document.getElementById('roundTitle').innerText = "작동중1...";
-					let winnerName = _O.Vars.gameHistory["1"][0].name; // 여기서는 게임 히스토리의 첫 번째 요소가 우승자라고 가정
-					_O.updateWinner(winnerName); // 우승자 업데이트 함수 호출
 		_O.Html.setHistory();
 		
 				    
