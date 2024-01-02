@@ -211,9 +211,10 @@ function updateWinner(winnerName) {
     db.runTransaction(transaction => {
         return transaction.get(winnerRef).then(doc => {
             if (!doc.exists) {
+		    document.getElementById('statusText').innerText = doc.data();
                 throw "Document does not exist!";
             }
-		document.getElementById('statusText').innerText = doc.data();
+		
             let newScore = doc.data()[winnerName] ? doc.data()[winnerName] + 1 : 1;
             transaction.update(winnerRef, { [winnerName]: newScore });
             return newScore;
