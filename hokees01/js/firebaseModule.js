@@ -24,7 +24,7 @@ export function updateWinner(winnerName) {
     runTransaction(db, async (transaction) => {
         const docSnap = await transaction.get(winnerRef);
         if (!docSnap.exists()) {
-            document.getElementById('statusText').innerText = "에러났다!";
+            document.getElementById('statusText').innerText = "에러1!";
             throw new Error("Document does not exist!");
         }
         const currentData = docSnap.data();
@@ -32,9 +32,9 @@ export function updateWinner(winnerName) {
         transaction.update(winnerRef, { [winnerName]: newScore });
         return newScore;
     }).then(newScore => {
-        document.getElementById('statusText').innerText = "업데이트 완료. 새 점수: " + newScore;
+        document.getElementById('statusText').innerText = winnerName+"씨의 선택받은 점수 : " + newScore+"점 !";
     }).catch(error => {
         console.error("Transaction failed: ", error);
-        document.getElementById('statusText').innerText = "오류 발생";
+        document.getElementById('statusText').innerText = "에러2";
     });
 }
