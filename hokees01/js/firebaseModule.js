@@ -41,22 +41,17 @@ export function updateWinner(winnerName) {
 
 async function showResults() {
     try {
-        // Firestore에서 모든 문서 가져오기
         const q = query(collection(db, "hokees01"));
         const querySnapshot = await getDocs(q);
 
         let resultsArray = [];
         querySnapshot.forEach((doc) => {
-            // 각 문서의 모든 필드(사람 이름 및 점수)를 배열에 추가
-            Object.entries(doc.data()).forEach(([name, score]) => {
-                resultsArray.push({ name, score });
+            Object.entries(doc.data()).forEach(([name, data]) => {
+                resultsArray.push({ name, score: data.score, imgSrc: data.imgSrc });
             });
         });
 
-        // 점수에 따라 결과 배열 정렬
         resultsArray.sort((a, b) => b.score - a.score);
-
-        // 결과 표시
         displayResults(resultsArray);
     } catch (error) {
         console.error("Error fetching documents: ", error);
