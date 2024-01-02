@@ -1,5 +1,5 @@
 import { updateWinner } from './firebaseModule.js';
-
+window.lezhin = window.lezhin || {};
 if(!window['lezhin']) {
 	lezhin = {};
 	( function (_O) {
@@ -294,5 +294,5 @@ if(!window['lezhin']) {
         tObj.innerHTML = s;
       }
     }
-	}) (lezhin);
+	}) (window.lezhin);
 }
