@@ -35,7 +35,7 @@ export function updateWinner(winnerName) {
         transaction.update(winnerRef, { [winnerName]: newData });
         return newData[0];
     }).then(newScore => {
-        document.getElementById('statusText').innerText = winnerName+"씨의 선택받은 점수 : " + newScore+"점 !";
+        document.getElementById('statusText').innerText = winnerName+"씨의 총 득표수 : " + newScore+"표!";
     }).catch(error => {
         console.error("Transaction failed: ", error);
         document.getElementById('statusText').innerText = "에러2";
