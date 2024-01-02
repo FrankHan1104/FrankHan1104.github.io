@@ -1,4 +1,4 @@
-import { updateWinner } from './firebaseModule.js';
+import { updateWinner } from '../firebaseModule.js';
 
 if(!window['lezhin']) {
 	lezhin = {};
