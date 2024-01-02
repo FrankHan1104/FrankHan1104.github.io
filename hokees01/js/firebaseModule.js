@@ -28,9 +28,11 @@ export function updateWinner(winnerName) {
             throw new Error("Document does not exist!");
         }
         const currentData = docSnap.data();
-        let newScore = currentData[winnerName] ? currentData[winnerName] + 1 : 1;
-        transaction.update(winnerRef, { [winnerName]: newScore });
-        return newScore;
+        let newData = currentData[winnerName] ? [...currentData[winnerName]] : [0, '']; // 배열 복사
+        newData[0] += 1; // 점수 증가
+
+        transaction.update(winnerRef, { [winnerName]: newData });
+        return newData[0];
     }).then(newScore => {
         document.getElementById('statusText').innerText = winnerName+"씨의 선택받은 점수 : " + newScore+"점 !";
     }).catch(error => {
@@ -47,16 +49,19 @@ async function showResults() {
         let resultsArray = [];
         querySnapshot.forEach((doc) => {
             Object.entries(doc.data()).forEach(([name, data]) => {
-                resultsArray.push({ name, score: data.score, imgSrc: data.imgSrc });
+                // data[0]는 점수, data[1]은 이미지 주소
+                resultsArray.push({ name, score: data[0], imgSrc: data[1] });
             });
         });
 
+        // 점수에 따라 결과 배열 정렬
         resultsArray.sort((a, b) => b.score - a.score);
         displayResults(resultsArray);
     } catch (error) {
         console.error("Error fetching documents: ", error);
     }
 }
+
 function displayResults(resultsArray) {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = ''; // 기존 내용 초기화
@@ -86,6 +91,7 @@ function displayResults(resultsArray) {
 
     resultsDiv.appendChild(table);
 }
+
 
 // 결과 확인 버튼 이벤트 리스너
 document.getElementById('resultsButton').addEventListener('click', showResults);
