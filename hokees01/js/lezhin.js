@@ -214,7 +214,7 @@ function updateWinner(winnerName) {
 		    document.getElementById('statusText').innerText = "에러났다!";
                 throw "Document does not exist!";
             }
-		
+		 document.getElementById('statusText').innerText = "에러났다2";
             let newScore = doc.data()[winnerName] ? doc.data()[winnerName] + 1 : 1;
             transaction.update(winnerRef, { [winnerName]: newScore });
             return newScore;
