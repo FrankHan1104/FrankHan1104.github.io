@@ -201,6 +201,33 @@ if(!window['lezhin']) {
         _O.Ctrl.prevCancelOnOff();
       }
     };
+
+function updateWinner(winnerName) {
+    const db = firebase.firestore();
+    const winnerRef = db.collection("hokees01").doc("p1");
+
+    document.getElementById('statusText').innerText = "작동 중...";
+
+    db.runTransaction(transaction => {
+        return transaction.get(winnerRef).then(doc => {
+            if (!doc.exists) {
+                throw "Document does not exist!";
+            }
+            let newScore = doc.data()[winnerName] ? doc.data()[winnerName] + 1 : 1;
+            transaction.update(winnerRef, { [winnerName]: newScore });
+            return newScore;
+        });
+    }).then(newScore => {
+        document.getElementById('statusText').innerText = "업데이트 완료. 새 점수: " + newScore;
+    }).catch(error => {
+        console.error("Transaction failed: ", error);
+        document.getElementById('statusText').innerText = "오류 발생";
+    });
+}
+
+
+		
+		
     _O.Html = {
       set() {
         this.setRoundTitle();
@@ -244,42 +271,12 @@ if(!window['lezhin']) {
         if(!tObj) return;
         tObj.innerHTML = s;
         if(_O.Vars.curRound === 1) { 
-
-
+			_O.Html.setHistory();
+			document.getElementById('statusText').innerText = "작동중1...";
+			let winnerName = _O.Vars.gameHistory["1"][0].name; // 여기서는 게임 히스토리의 첫 번째 요소가 우승자라고 가정
+			updateWinner(winnerName);		
+  
 		
-		document.getElementById('statusText').innerText = "작동중1...";
-					let winnerName = _O.Vars.gameHistory["1"][0].name; // 여기서는 게임 히스토리의 첫 번째 요소가 우승자라고 가정
-					
-  const db = firebase.database();
-  const winnerRef = db.collection("hokees01").doc("p1");
-document.getElementById('statusText').innerText = "작동중3...";
- 
-
-  // 우승자의 점수를 업데이트합니다.
-  return db.runTransaction((transaction) => {
-    return transaction.get(winnerRef).then((doc) => {
-      if (!doc.exists) {
-        document.getElementById('statusText').innerText = "작동안함...";
-        throw "Document does not exist!";
-      }
-
-      // 새로운 스코어를 계산합니다.
-      let newScore = doc.data()[winnerName] ? doc.data()[winnerName] + 1 : 1;
-
-      
-
-      // 문서 업데이트
-      transaction.update(winnerRef, { [winnerName]: newScore });
-
-      return newScore; // 업데이트된 점수 반환
-    });
-  }).then((newScore) => {
-    document.getElementById('statusText').innerText = "작업완료";
-  }).catch((error) => {
-    console.log("Transaction failed: ", error);
-    document.getElementById('statusText').innerText = "오류 발생";
-  });
-		_O.Html.setHistory();
 		
 				    
 				   }
