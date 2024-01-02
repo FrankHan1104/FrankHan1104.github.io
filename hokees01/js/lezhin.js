@@ -1,4 +1,5 @@
 import { updateWinner } from './firebaseModule.js';
+
 if(!window['lezhin']) {
 	lezhin = {};
 	( function (_O) {
