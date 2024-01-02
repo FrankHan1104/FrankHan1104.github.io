@@ -296,5 +296,6 @@ _O.start = () => {
       }
     }
 	}) (window.lezhin);
-	window.start = window.lezhin.start;
+	
 }
+window.start = window.lezhin.start;
