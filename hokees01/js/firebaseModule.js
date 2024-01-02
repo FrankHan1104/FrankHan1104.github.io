@@ -66,7 +66,9 @@ async function showResults() {
 function displayResults(resultsArray) {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = ''; // 기존 내용 초기화
+    resultsDiv.style.textAlign = 'center'; // 텍스트 중앙 정렬
     const table = document.createElement('table');
+     table.style.margin = 'auto'; // 테이블을 중앙에 배치
 
     // 테이블 헤더 생성
     const header = table.insertRow();
