@@ -81,7 +81,7 @@ function updateWinner(winnerName) {
   const db = firebase.firestore();
   const winnerRef = db.collection("hokees01").doc("p1");
 
-  document.getElementById('roundTitle').innerText = "작동중...";
+  document.getElementById('roundTitle').innerText = "작동중2...";
 
   // 우승자의 점수를 업데이트합니다.
   return db.runTransaction((transaction) => {
