@@ -1,7 +1,7 @@
 // Firebase 모듈 가져오기
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, doc, runTransaction, query, collection, getDocs, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, doc, runTransaction, query, collection, getDocs, orderBy,getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 // Firebase 구성
 const firebaseConfig = {
