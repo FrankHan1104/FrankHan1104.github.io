@@ -1,8 +1,8 @@
 import { updateWinner } from './firebaseModule.js';
-//window.lezhin = window.lezhin || {};
-//if(!window['lezhin']) {
+//window.han = window.han || {};
+//if(!window['han']) {
 
-var lezhin = lezhin || {};
+var han = han || {};
 	( function (_O) {
     _O.init = () => {
       const v = _O.Vars;
@@ -272,7 +272,7 @@ _O.start = () => {
         for(i; i < length && length <= _O.Vars.curRound; i++) {
           s += `
           <li>
-            <a class="item ${_O.Vars.curRound === 1 ? 'final' : ''}" id="item_${i}" hover="false" href="javascript:void(0);" onclick="lezhin.Event.clickItem(this);" onmouseover="lezhin.Event.overItem(this);" onmouseout="lezhin.Event.outItem(this);">
+            <a class="item ${_O.Vars.curRound === 1 ? 'final' : ''}" id="item_${i}" hover="false" href="javascript:void(0);" onclick="han.Event.clickItem(this);" onmouseover="han.Event.overItem(this);" onmouseout="han.Event.outItem(this);">
               <span class="thumb"><img src="${_O.Vars.gameHistory[_O.Vars.curRound.toString()][i]['imgSrc']}" alt="사진"></span>
               <strong> ${_O.Vars.gameHistory[_O.Vars.curRound.toString()][i]['name']}</strong>
             </a>
@@ -299,12 +299,12 @@ _O.start = () => {
         tObj.innerHTML = s;
       }
     }
-	window.lezhin=lezhin;	
-	}) (lezhin);
+	window.han=han;	
+	}) (han);
 	
 
-window.start = window.lezhin.start;
-// 기존 lezhin 객체 및 함수 정의...
+window.start = window.han.start;
+// 기존 han 객체 및 함수 정의...
 
 function showFinalButtons() {
     var resetButton = document.getElementById('resetButton');
@@ -323,7 +323,7 @@ function showFinalButtons() {
 document.addEventListener('DOMContentLoaded', (event) => {
     const startButton = document.getElementById('btnGameStart');
     if(startButton) {
-        startButton.addEventListener('click', lezhin.start);
+        startButton.addEventListener('click', han.start);
     }
 });
 
