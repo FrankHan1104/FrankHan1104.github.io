@@ -2,7 +2,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, doc, runTransaction, query, collection, getDocs, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-const xlsx = require('xlsx');
+
 // Firebase 구성
 const firebaseConfig = {
     apiKey: "AIzaSyBCkAmK_Lm5GxaIPV9BYABGJe6oc9Rhtjg",
@@ -18,25 +18,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-
-const filePath = './js/top16_db.xlsx'; // Excel 파일 경로
-const data = readExcelFile(filePath);
-
-export function readExcelFile(filePath) {
-    const workbook = xlsx.readFile(filePath);
-    const sheetName = workbook.SheetNames[0];
-    const sheet = workbook.Sheets[sheetName];
-    return xlsx.utils.sheet_to_json(sheet);
-}
-async function uploadDataToFirestore(data) {
-    const docRef = doc(db, 'hokees01', 'p2');
-    try {
-        await setDoc(docRef, data);
-        console.log('Document successfully written!');
-    } catch (error) {
-        console.error('Error writing document: ', error);
-    }
-}
 
 // 우승자 업데이트 함수
 export function updateWinner(winnerName) {
