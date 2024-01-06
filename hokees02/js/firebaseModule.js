@@ -45,24 +45,28 @@ export function updateWinner(winnerName) {
 
 async function showResults() {
     try {
-        const q = query(collection(db, "hokees01"));
-        const querySnapshot = await getDocs(q);
+        const docRef = doc(db, "hokees01", "p1");
+        const docSnap = await getDoc(docRef);
 
-        let resultsArray = [];
-        querySnapshot.forEach((doc) => {
-            Object.entries(doc.data()).forEach(([name, data]) => {
-                // data[0]는 점수, data[1]은 이미지 주소
-                resultsArray.push({ name, score: data[0], imgSrc: data[1] });
+        if (docSnap.exists()) {
+            let resultsArray = [];
+            const data = docSnap.data();
+            Object.entries(data).forEach(([name, value]) => {
+                // value[0]는 점수, value[1]은 이미지 주소
+                resultsArray.push({ name, score: value[0], imgSrc: value[1] });
             });
-        });
 
-        // 점수에 따라 결과 배열 정렬
-        resultsArray.sort((a, b) => b.score - a.score);
-        displayResults(resultsArray);
+            // 점수에 따라 결과 배열 정렬
+            resultsArray.sort((a, b) => b.score - a.score);
+            displayResults(resultsArray);
+        } else {
+            console.log("No such document!");
+        }
     } catch (error) {
-        console.error("Error fetching documents: ", error);
+        console.error("Error fetching document: ", error);
     }
 }
+
 
 function displayResults(resultsArray) {
     const resultsDiv = document.getElementById('results');
