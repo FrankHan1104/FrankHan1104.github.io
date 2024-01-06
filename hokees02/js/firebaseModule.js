@@ -20,7 +20,7 @@ const db = getFirestore(app);
 
 // 우승자 업데이트 함수
 export function updateWinner(winnerName) {
-    const winnerRef = doc(db, "hokees01", "p1");
+    const winnerRef = doc(db, "hokees01", "p2");
 
     runTransaction(db, async (transaction) => {
         const docSnap = await transaction.get(winnerRef);
