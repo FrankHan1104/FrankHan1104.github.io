@@ -45,7 +45,7 @@ export function updateWinner(winnerName) {
 
 async function showResults() {
     try {
-        const docRef = doc(db, "hokees01", "p1");
+        const docRef = doc(db, "hokees01", "p2");
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
