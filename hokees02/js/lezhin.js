@@ -35,82 +35,82 @@ _O.start = () => {
       getLists() {
         return [
           {
-            name: '배수지',
+            name: '남주혁',
             imgSrc: 'images/01.jpg',
             selected: false
           },
           {
-            name: '신세경',
+            name: '안효섭',
             imgSrc: 'images/02.jpg',
             selected: false
           },
           {
-            name: '고윤정',
+            name: '송강',
             imgSrc: 'images/03.jpg',
             selected: false
           },
           { 
-            name: '김태희',
+            name: '차은우',
             imgSrc: 'images/04.jpg',
             selected: false
           },
           {
-            name: '한소희',
+            name: '이도현',
             imgSrc: 'images/05.jpg',
             selected: false
           },
           {
-            name: '윤아',
+            name: '정해인',
             imgSrc: 'images/06.jpg',
             selected: false
           },
           {
-            name: '박보영',
+            name: '이동욱',
             imgSrc: 'images/07.jpg',
             selected: false
           },
           {
-            name: '이지은',
+            name: '지창욱',
             imgSrc: 'images/08.jpg',
             selected: false
           },
           {
-            name: '박지현',
+            name: '이종석',
             imgSrc: 'images/09.jpg',
             selected: false
           },
           {
-            name: '조보아',
+            name: '서강준',
             imgSrc: 'images/10.jpg',
             selected: false
           },
           {
-            name: '권나라',
+            name: '이진욱',
             imgSrc: 'images/11.jpg',
             selected: false
           },
           {
-            name: '박은빈',
+            name: '강동원',
             imgSrc: 'images/12.jpg',
             selected: false
           },
           {
-            name: '이성경',
+            name: '최우식',
             imgSrc: 'images/13.jpg',
             selected: false
           },
           {
-            name: '김유정',
+            name: '박서준',
             imgSrc: 'images/14.jpg',
             selected: false
           },
           {
-            name: '한효주',
+            name: '우도환',
             imgSrc: 'images/15.jpg',
             selected: false
           },
           {
-            name: '김지원',
+            name: '박보검',
             imgSrc: 'images/16.jpg',
             selected: false
           }
