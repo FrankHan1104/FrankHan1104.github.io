@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hompage-task-1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="logo">
+      <a href="#"><img src="./img/logo_001.png" alt="logo" /></a>
+    </div>
+    <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    <div class="links">
+      <ul>
+        <li><a href="#">producs</a></li>
+        <li><a href="#">prices</a></li>
+        <li><a href="#">team</a></li>
+        <li><a href="#">login</a></li>
+        <li><a href="#">privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="column-1">
+      <h1>Make your Startup web with our template,</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+        dignissimos incidunt, dolore necessitatibus eveniet doloribus obcaecati
+        odit ratione numquam atque, inventore facilis veritatis. Doloremque
+        officiis eligendi vel reprehenderit, iure tenetur magni modi alias!
+        Debitis, voluptas.
+      </p>
+      <div class="buttons">
+        <button id="green">Learn More</button>
+        <button id="blue">Get the App</button>
+      </div>
+    </div>
+    <div class="column-2">
+      <img src="./img/phone_001.png" alt="phone_1" />
+      <img src="./img/phone_002.png" alt="phone_2" />
+    </div>
+    <script>
+      let clicked = false;
+      document.querySelector(".hamburger").addEventListener("click", () => {
+        clicked = !clicked;
+        if (clicked) {
+          document.querySelector(".links").style.cssText = "display:block;";
+          
+        } else {
+          document.querySelector(".links").style.cssText = "display:none;";
+        }
+      });
+    </script>
+  </body>
+</html>
