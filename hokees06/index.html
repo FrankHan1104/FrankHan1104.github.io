@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>이상형 월드컵</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/han.css?ver=2">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&display=swap" rel="stylesheet">
+</head>
+<body onload="preLoadingImg()">
+    <div class="wrap">
+        <header>
+            <h1>이상형 월드컵(과자 편)</h1>
+            <span id="statusText" style="float: right;">by HOKEES</span>
+            <p id="roundTitle">이상형 월드컵에 참여해 주세요.</p>
+        </header>
+        <div class="content default" id="content">
+            <button id="btnGameStart">게임 참여</button>
+        </div>
+        <footer class="footer2" id="footer2">
+            <button id="resetButton" onclick="resetGame()" style="display: none;">다시하기</button>
+            <button id="resultsButton" style="display: none;">결과확인</button>
+        </footer>
+        <footer class="footer3" id="footer3">
+            <div style="display: flex; justify-content: center; text-align: center;">
+                <div id="results"></div>
+            </div>
+        </footer>
+        <footer class="footer soff" id="footer">
+            <button id="cancel" onclick="han.Event.clickCancel()">취소</button>
+            <button id="prev" onclick="han.Event.clickPrev()">이전</button>
+        </footer>
+    </div>
+    <script type="module" src="./js/firebaseModule.js"></script>
+    <script type="module" src="./js/han.js?ver=2"></script>
+    <script>
+        function preLoadingImg() {
+            const preLoadingList = [
+                'images/01.jpg', 'images/02.jpg', 'images/03.jpg', 'images/04.jpg', 
+                'images/05.jpg', 'images/06.jpg', 'images/07.jpg', 'images/08.jpg', 
+                'images/09.jpg', 'images/10.jpg', 'images/11.jpg', 'images/12.jpg', 
+                'images/13.jpg', 'images/14.jpg', 'images/15.jpg', 'images/16.jpg'
+            ];
+            const tObj = document.getElementsByTagName("BODY")[0];
+            const hiddenNode = document.createElement('DIV');
+            hiddenNode.className = 'pre_load soff';
+            for (let i = 0; i < preLoadingList.length; i++) {
+                const imgNode = document.createElement('IMG');
+                imgNode.setAttribute('src', preLoadingList[i]);
+                hiddenNode.appendChild(imgNode);
+            }
+            tObj.appendChild(hiddenNode);
+        }
+        function resetGame() {
+            window.location.reload();
+        }
+      
+    </script>
+</body>
+</html>
