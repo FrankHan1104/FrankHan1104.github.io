@@ -64,6 +64,47 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
         }
+        .list_ideal {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .list_ideal li {
+            width: 40%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border: 2px solid #E21C3D;
+            border-radius: 10px;
+        }
+        .list_ideal li strong {
+            margin-top: 10px;
+            color: #E21C3D;
+        }
+        .vs {
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .vs span {
+            display: inline-block;
+            padding: 20px;
+            font-size: 36px;
+            font-weight: bold;
+            color: #E21C3D;
+            border-radius: 50%;
+            border: 2px solid #E21C3D;
+            background-color: #FFF5F5;
+        }
+        .list_ideal li a:hover img {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
     </style>
 </head>
 <body onload="preLoadingImg()">
@@ -74,45 +115,33 @@
             <p id="roundTitle">선호하는 리모델링 스타일을 뽑아주세요!</p>
         </header>
         <div class="content default" id="content">
+            <ul class="list_ideal">
+                <li>
+                    <a href="#">
+                        <span>
+                            <img src="images/01.jpg" alt="Style 1">
+                        </span>
+                        <strong>스타일 1</strong>
+                    </a>
+                </li>
+                <li id="vs" class="vs">
+                    <span>VS</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>
+                            <img src="images/02.jpg" alt="Style 2">
+                        </span>
+                        <strong>스타일 2</strong>
+                    </a>
+                </li>
+            </ul>
             <button id="btnGameStart">참여</button>
         </div>
         <footer class="footer2" id="footer2">
             <button id="resetButton" onclick="resetGame()" style="display: none;">다시하기</button>
             <button id="resultsButton" style="display: none;">결과확인</button>
         </footer>
-        <footer class="footer3" id="footer3">
-            <div style="display: flex; justify-content: center; text-align: center;">
-                <div id="results"></div>
-            </div>
-        </footer>
-        <footer class="footer soff" id="footer">
-            <button id="cancel" onclick="han.Event.clickCancel()">취소</button>
-            <button id="prev" onclick="han.Event.clickPrev()">이전</button>
-        </footer>
     </div>
-    <script type="module" src="./js/firebaseModule.js"></script>
-    <script type="module" src="./js/han.js?ver=2"></script>
-    <script>
-        function preLoadingImg() {
-            const preLoadingList = [
-                'images/01.jpg', 'images/02.jpg', 'images/03.jpg', 'images/04.jpg', 
-                'images/05.jpg', 'images/06.jpg', 'images/07.jpg', 'images/08.jpg', 
-                'images/09.jpg', 'images/10.jpg', 'images/11.jpg', 'images/12.jpg', 
-                'images/13.jpg', 'images/14.jpg', 'images/15.jpg', 'images/16.jpg'
-            ];
-            const tObj = document.getElementsByTagName("BODY")[0];
-            const hiddenNode = document.createElement('DIV');
-            hiddenNode.className = 'pre_load soff';
-            for (let i = 0; i < preLoadingList.length; i++) {
-                const imgNode = document.createElement('IMG');
-                imgNode.setAttribute('src', preLoadingList[i]);
-                hiddenNode.appendChild(imgNode);
-            }
-            tObj.appendChild(hiddenNode);
-        }
-        function resetGame() {
-            window.location.reload();
-        }
-    </script>
 </body>
 </html>
