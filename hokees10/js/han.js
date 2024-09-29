@@ -245,7 +245,7 @@ _O.start = () => {
       },
       setRoundTitle() {
         if(_O.Vars.curRound > 1) document.getElementById('roundTitle').innerText = `${_O.Vars.curRound}강 선택`;
-        else document.getElementById('roundTitle').innerText = `축하합니다. 최종 이상형이 선정되었습니다.`;
+        else document.getElementById('roundTitle').innerText = `축하합니다. 선호하는 스타일이 선정되었습니다.`;
 	     
       },
       setItem() {
