@@ -1,5 +1,5 @@
-0 Class 1
-1 Class 2
-2 Class 3
-3 Class 4
-4 Class 5
+0 약1
+1 약2
+2 약3
+3 약4
+4 약5
